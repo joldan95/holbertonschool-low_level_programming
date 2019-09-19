@@ -23,7 +23,7 @@ int main(void)
 		m = n + 1;
 		while (m < 100)
 		{
-   		   	putchar((n / 10) + cod);
+			putchar((n / 10) + cod);
 			putchar((n % 10) + cod);
 			putchar(32);
 			putchar((m / 10) + cod);
@@ -34,7 +34,7 @@ int main(void)
 				putchar(44);
 				putchar(32);
 			}
-	   		m++;
+			m++;
 		}
 		n++;
 	}
