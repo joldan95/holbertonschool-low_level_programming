@@ -13,8 +13,8 @@ int main(void)
 	int long temp = 0;
 	int i = 2;
 
-	printf("%lu\n", f1);
-	printf("%lu\n", f2);
+	printf("%lu, ", f1);
+	printf("%lu, ", f2);
 
 	while (i < 50)
 	{
