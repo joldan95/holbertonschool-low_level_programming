@@ -28,7 +28,7 @@ void print_times_table(int n)
 			else
 			{
 				_putchar(' ');
-				_putchar(((res / 100) == 0) ? ' ' : (res/100) + cod);
+				_putchar(((res / 100) == 0) ? ' ' : (res / 100) + cod);
 				_putchar(((res / 10) == 0) ? ' ' : (res / 10) % 10 + cod);
 				_putchar((res % 10) + cod);
 			}
