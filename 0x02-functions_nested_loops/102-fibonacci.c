@@ -8,10 +8,10 @@
  */
 int main(void)
 {
-	long unsigned int f1 = 1;
-	long unsigned int f2 = 2;
-	long unsigned int temp = 0;
-	int i = 2;
+	unsigned int long f1 = 1;
+	unsigned int long f2 = 2;
+	unsigned int long temp = 0;
+	int i = 3;
 
 	printf("%lu\n", f1);
 	printf("%lu\n", f2);
