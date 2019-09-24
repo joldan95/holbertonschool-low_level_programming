@@ -1,5 +1,5 @@
 #include <string.h>
-#include "_putchar.c"
+#include "holberton.h"
 
 /**
  * main - Entry point
