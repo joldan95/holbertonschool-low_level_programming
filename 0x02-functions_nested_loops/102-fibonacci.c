@@ -8,10 +8,10 @@
  */
 int main(void)
 {
-	unsigned int long f1 = 1;
-	unsigned int long f2 = 2;
-	unsigned int long temp = 0;
-	int i = 3;
+	int long f1 = 1;
+	int long f2 = 2;
+	int long temp = 0;
+	int i = 2;
 
 	printf("%lu\n", f1);
 	printf("%lu\n", f2);
@@ -21,7 +21,7 @@ int main(void)
 		temp = f2;
 		f2 += f1;
 		f1 = temp;
-		printf("%lu\n", f2);
+		printf(i == 49 ? "%lu\n" : "%lu, ", f2);
 		i++;
 	}
 	return (0);
