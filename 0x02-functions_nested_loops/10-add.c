@@ -2,7 +2,7 @@
  * add - Adds two integer and return the
  * result
  * @a: Integer number 1
- * @a: Integer number 2
+ * @b: Integer number 2
  *
  * Return: Sum of parameters
  */
