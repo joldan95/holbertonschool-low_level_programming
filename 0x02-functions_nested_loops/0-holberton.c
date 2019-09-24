@@ -1,4 +1,3 @@
-#include <string.h>
 #include "holberton.h"
 
 /**
@@ -13,7 +12,7 @@ int main(void)
 	char name[] = "Holberton";
 	unsigned int i = 0;
 
-	while (i < strlen(name))
+	while (i < 9)
 		_putchar(name[i++]);
 	_putchar('\n');
 	return (0);
