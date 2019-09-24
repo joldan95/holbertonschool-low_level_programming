@@ -11,7 +11,7 @@ int main(void)
 	int long f1 = 1;
 	int long f2 = 2;
 	int long temp = 0;
-	int long sum;
+	int long sum = 0;
 
 	while (f2 < 4000000)
 	{
