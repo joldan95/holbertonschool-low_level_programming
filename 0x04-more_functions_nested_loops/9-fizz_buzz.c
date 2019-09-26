@@ -33,4 +33,5 @@ int main(void)
 		}
 		printf(i == 100 ? "\n" : " ");
 	}
+	return (0);
 }
