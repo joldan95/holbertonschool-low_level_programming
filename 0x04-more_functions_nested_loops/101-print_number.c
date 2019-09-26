@@ -7,7 +7,7 @@
  */
 void print_number(int n)
 {
-	int d = n / n;
+	int d = 1;
 
 	if (n < 0)
 	{
