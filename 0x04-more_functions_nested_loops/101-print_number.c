@@ -3,18 +3,15 @@
 /**
  * print_number - Prints an integer number
  * @n: Integer to print
+ *
  * Return: Nothing
  */
 void print_number(int n)
 {
 	int d = 1;
 
-	if (n < 0)
-	{
-		_putchar('-');
-		n *= -1;
-	}
-
+	n < 0 ? _putchar('-') : 1;
+	n *= n < 0 ? -1 : 1;
 	while (n / d > 9)
 		d *= 10;
 
@@ -24,5 +21,4 @@ void print_number(int n)
 		n %= d;
 		d /= 10;
 	}
-	/*_putchar(n % 10 + '0');*/
 }
