@@ -9,6 +9,7 @@ int _atoi(char *s)
 {
 	int sg = 1;
 	unsigned int n;
+
 	n = 0;
 	do {
 		sg *= *s == '-' ? -1 : 1;
