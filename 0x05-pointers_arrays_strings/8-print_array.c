@@ -13,7 +13,7 @@ void print_array(int *a, int n)
 
 	while (i < n)
 	{
-		printf(i + 1 == n ? "%d\n" : "%d, ", *(a + i));
+		printf(i == (n - 1) ? "%d\n" : "%d, ", a[i]);
 		i++;
 	}
 }
