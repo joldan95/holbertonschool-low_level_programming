@@ -8,9 +8,11 @@
  */
 void print_number(int n)
 {
+	unsigned int numerillo;
 	n < 0 ? _putchar('-') : 1;
 	n *= n < 0 ? -1 : 1;
-	if (n / 10)
-		print_number(n / 10);
-	_putchar(n % 10 + '0');
+	numerillo = n;
+	if (numerillo / 10)
+		print_number(numerillo / 10);
+	_putchar(numerillo % 10 + '0');
 }
