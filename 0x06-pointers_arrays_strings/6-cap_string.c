@@ -16,6 +16,9 @@ char *cap_string(char *str)
 
 	while (str[len] != 0)
 	{
+		if (len == 0 && (str[len + 1] >= 97 && str[len + 1] <= 122))
+			str[len] -= 32;
+		
 		for (i = 0; c[i]; i++)
 		{
 			if (str[len] == c[i])
