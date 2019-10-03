@@ -14,7 +14,7 @@ char *cap_string(char *str)
 	int i;
 	char *c = " \t\n,;.!?\"(){}";
 
-	while(str[len] != 0)
+	while (str[len] != 0)
 	{
 		for (i = 0; c[i]; i++)
 		{

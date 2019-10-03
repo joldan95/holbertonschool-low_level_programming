@@ -14,7 +14,7 @@ char *rot13(char *str)
 	char *c = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
 	char *n = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
 
-	while(str[len] != 0)
+	while (str[len] != 0)
 	{
 		for (i = 0; c[i]; i++)
 		{

@@ -19,13 +19,13 @@ char *leet(char *str)
 	char *c = "aAeEoOtTlL";
 	char *n = "43071";
 
-	while(str[len] != 0)
+	while (str[len] != 0)
 	{
 		for (i = 0; c[i]; i++)
 		{
 			if (str[len] == c[i])
 			{
-				str[len] = n[i/2];
+				str[len] = n[i / 2];
 				break;
 			}
 		}

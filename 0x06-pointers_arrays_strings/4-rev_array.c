@@ -1,5 +1,5 @@
 /**
- * rev_array - reverse the content of an array of integers
+ * reverse_array - reverse the content of an array of integers
  * @a: Pointer to the first element of the array
  * @n: Numbers of elements on the array
  *
@@ -12,7 +12,7 @@ void reverse_array(int *a, int n)
 	i = 0;
 	j = n - 1;
 
-	while(i <= j)
+	while (i <= j)
 	{
 		r = a[i];
 		a[i] = a[j];
