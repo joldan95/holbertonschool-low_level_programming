@@ -9,6 +9,7 @@
 void print_number(int n)
 {
 	unsigned int numerillo;
+
 	n < 0 ? _putchar('-') : 1;
 	n *= n < 0 ? -1 : 1;
 	numerillo = n;
