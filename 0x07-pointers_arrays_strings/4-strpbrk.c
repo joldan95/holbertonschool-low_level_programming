@@ -2,7 +2,7 @@
  * _strpbrk - Locate the first ocurrence of a
  * character from a set of characters
  * @s: Pointer to the string where locate the char
- * @c: Characters to look for
+ * @accept: Characters to look for
  *
  * Return: Pointer to the first occurence in the set of chars.
  * NULL if any character is found.
