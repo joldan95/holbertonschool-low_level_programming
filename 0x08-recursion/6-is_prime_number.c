@@ -1,4 +1,4 @@
-Bint prime_number(int x, int n);
+int prime_number(int x, int n);
 
 /**
  * is_prime_number - Check if the number inserted is or not a prime number
