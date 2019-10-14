@@ -22,16 +22,18 @@ int main(int argc, char *argv[])
 	}
 
 	cents = atoi(argv[1]);
-	sum += cents / 25;
-	cents %= 25;
-	sum += cents / 10;
-	cents %= 10;
-	sum += cents / 5;
-	cents %= 5;
-	sum += cents / 2;
-	cents %= 2;
-	sum += cents;
-
+	if (cents >= 0)
+	{
+		sum += cents / 25;
+		cents %= 25;
+		sum += cents / 10;
+		cents %= 10;
+		sum += cents / 5;
+		cents %= 5;
+		sum += cents / 2;
+		cents %= 2;
+		sum += cents;
+	}
 	printf("%d\n", sum);
 	return (0);
 }
