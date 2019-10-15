@@ -17,26 +17,18 @@ char *_stratt(char *dest, char *src);
 char *argstostr(int ac, char **av)
 {
 	char *s, *r;
-	int *len;
 	int i, suma = 0;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	len = (int *)malloc(ac * sizeof(int));
-
 	for (i = 0; i < ac; i++)
-	{
-		len[i] = _strlen(av[i]);
-		suma += len[i] + 1;
-	}
+		suma += _strlen(av[i]) + 1;
 	suma++;
 
 	s = (char *)malloc(suma * sizeof(char));
 	if (s == NULL)
 	{
-		free(len);
-		len = NULL;
 		return (NULL);
 	}
 	else
@@ -47,9 +39,8 @@ char *argstostr(int ac, char **av)
 			r = _stratt(r, av[i]);
 		}
 		r = NULL;
-		free(len);
 	}
-	s[suma - 1] = '\0';
+	/* s[suma - 1] = '\0'; */
 	return (s);
 }
 
