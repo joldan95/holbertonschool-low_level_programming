@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
+char *_stratt(char *dest, char *src);
 
 /**
  * argstostr - Concatenates the arguments
@@ -44,8 +44,7 @@ char *argstostr(int ac, char **av)
 		r = s;
 		for (i = 0; i < ac; i++)
 		{
-			r = _strcpy(r + (i == 0 ? 0 : len[i - 1] + 1), av[i]);
-			r[len[i]] = '\n';
+			r = _stratt(r, av[i]);
 		}
 		r = NULL;
 		free(len);
@@ -72,20 +71,21 @@ int _strlen(char *s)
 
 #include <stdio.h>
 /**
- * _strcpy - copies the second to the first
- * parameter
+ * _stratt - copies the second to the first
+ * parameter and adds a new line
  * @dest: The destination pointer
  * @src: The source pointer
  *
- * Return: The pointer to dest
+ * Return: The pointer to the final letter copied
  */
-char *_strcpy(char *dest, char *src)
+char *_stratt(char *dest, char *src)
 {
 	int len = 0;
 
 	do {
 		*(dest + len) = *(src + len);
 		len++;
-	} while (*(src + len - 1) != '\0');
-	return (dest);
+	} while (*(src + len) != '\0');
+	dest[len] = '\n';
+	return (dest + len + 1);
 }
