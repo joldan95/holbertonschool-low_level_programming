@@ -1,4 +1,5 @@
 #include <stdlib.h>
+
 /**
  * create_array - Creates an array of chars
  * @size: Size of the string to create
@@ -18,7 +19,10 @@ char *create_array(unsigned int size, char c)
 	{
 		for (i = 0; i < size; i++)
 			s[i] = c;
+		return (s);
 	}
-
-	return (s);
+	else
+	{
+		return (NULL);
+	}
 }
