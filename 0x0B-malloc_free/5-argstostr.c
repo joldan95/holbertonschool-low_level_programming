@@ -25,19 +25,12 @@ char *argstostr(int ac, char **av)
 
 	len = (int *)malloc(ac * sizeof(int));
 
-	if (len == NULL)
+	for (i = 0; i < ac; i++)
 	{
-		return (NULL);
+		len[i] = _strlen(av[i]);
+		suma += len[i] + 1;
 	}
-	else
-	{
-		for (i = 0; i < ac; i++)
-		{
-			len[i] = _strlen(av[i]);
-			suma += len[i] + 1;
-		}
-		suma++;
-	}
+	suma++;
 
 	s = (char *)malloc(suma * sizeof(char));
 	if (s == NULL)
