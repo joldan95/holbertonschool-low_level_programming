@@ -48,7 +48,7 @@ char **strtow(char *str)
 				return (NULL);
 			}
 			lw[i] = _memcpy(lw[i], str, *pj);
-			lw[i][*pj] = '\0';
+			/* lw[i][*pj] = '\0'; */
 			str = str + *pj;
 			*pj = 0;
 		}
