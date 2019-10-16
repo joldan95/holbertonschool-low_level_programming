@@ -25,7 +25,7 @@ char **strtow(char *str)
 	char **lw;
 	int i, j, *pj;
 
-	if (str == NULL /* || *str == "" */)
+	if (str == NULL || *str == '\0')
 		return (NULL);
 
 	nw = n_words(str, 0) + 1;
@@ -41,7 +41,7 @@ char **strtow(char *str)
 		if (i != nw - 1)
 		{
 			str = get_word(str, pj);
-			lw[i] = (char *)malloc(*pj * sizeof(char));
+			lw[i] = (char *)malloc((*pj + 1) * sizeof(char));
 			if (lw[i] == NULL)
 			{
 				free_list(lw, i);
