@@ -28,11 +28,11 @@ char **strtow(char *str)
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
-	nw = n_words(str, 0) + 1;
+	nw = n_words(str, 0);
 	if (nw == 0)
 		return (NULL);
 
-	lw = (char **)malloc(nw * sizeof(char *));
+	lw = (char **)malloc((nw + 1) * sizeof(char *));
 
 	if (lw == NULL)
 		return (NULL);
@@ -41,25 +41,19 @@ char **strtow(char *str)
 	*pj = 0;
 	for (i = 0; i < nw; i++)
 	{
-		if (i != nw - 1)
+		str = get_word(str, pj);
+		lw[i] = (char *)malloc((*pj + 1) * sizeof(char));
+		if (lw[i] == NULL)
 		{
-			str = get_word(str, pj);
-			lw[i] = (char *)malloc((*pj + 1) * sizeof(char));
-			if (lw[i] == NULL)
-			{
-				free_list(lw, i);
-				return (NULL);
-			}
-			lw[i] = _memcpy(lw[i], str, *pj);
-			/* lw[i][*pj] = '\0'; */
-			str = str + *pj;
-			*pj = 0;
+			free_list(lw, i);
+			return (NULL);
 		}
-		else
-		{
-			lw[i] = NULL;
-		}
+		lw[i] = _memcpy(lw[i], str, *pj);
+		lw[i][*pj] = '\0';
+		str = str + *pj;
+		*pj = 0;
 	}
+	lw[i] = NULL;
 
 	return (lw);
 }
