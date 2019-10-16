@@ -29,6 +29,9 @@ char **strtow(char *str)
 		return (NULL);
 
 	nw = n_words(str, 0) + 1;
+	if (nw == 0)
+		return (NULL);
+
 	lw = (char **)malloc(nw * sizeof(char *));
 
 	if (lw == NULL)
