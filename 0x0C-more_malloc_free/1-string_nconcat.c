@@ -29,12 +29,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	s = (char *)malloc((len + 1) * sizeof(char));
 
-	if (s != NULL)
-	{
-		s = _memcpy(s, (s1 == NULL ? "\0" : s1), len1);
-		s = _memcpy(s + len1, (s2 == NULL ? "\0" : s2), len2);
-		s -= len1;
-	}
+	if (s == NULL)
+		return (NULL);
+
+	s = _memcpy(s, (s1 == NULL ? "\0" : s1), len1);
+	s = _memcpy(s + len1, (s2 == NULL ? "\0" : s2), len2);
+	s -= len1;
+
 	return (s);
 }
 
