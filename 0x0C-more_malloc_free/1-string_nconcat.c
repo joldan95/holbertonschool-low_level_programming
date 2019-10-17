@@ -24,17 +24,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	len1 = s1 == NULL ? 0 : _strlen(s1);
 	len2 = s2 == NULL ? 0 : _strlen(s2);
-	len2 = n > len2 ? len2 : n;
+	len2 = n >= len2 ? len2 : n;
 	len = len1 + len2;
 
-	s = (char *)malloc((len + 1) * sizeof(char));
+	s = malloc((len + 1) * sizeof(char));
 
 	if (s == NULL)
 		return (NULL);
 
-	s = _memcpy(s, (s1 == NULL ? "\0" : s1), len1);
-	s = _memcpy(s + len1, (s2 == NULL ? "\0" : s2), len2);
+	s = _memcpy(s, (s1 == NULL ? "" : s1), len1);
+	s = _memcpy(s + len1, (s2 == NULL ? "" : s2), len2);
 	s -= len1;
+	s[len] = '\0';
 
 	return (s);
 }
