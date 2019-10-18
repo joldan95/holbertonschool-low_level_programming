@@ -37,14 +37,14 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		_puts("Error\n");
+		_puts("Error");
 		exit(98);
 	}
 
 	/* checkea digitos de argv */
 	if (!check_digits(argv[1]) || !check_digits(argv[2]))
 	{
-		_puts("Error\n");
+		_puts("Error");
 		exit(98);
 	}
 
