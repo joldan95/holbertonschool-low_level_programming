@@ -5,12 +5,12 @@ void _puts(char *str);
 /**
  * main - Entry point of application
  *
- * Return Always 0 (Success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-    _puts(__FILE__);
-    return (0);
+	_puts(__FILE__);
+	return (0);
 }
 
 /**
