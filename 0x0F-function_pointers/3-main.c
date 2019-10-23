@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "3-calc.h"
 
 /**
@@ -21,7 +22,7 @@ int main(int ac, char **av)
 
 	f = get_op_func(av[2]);
 
-	if (f == NULL)
+	if (f == NULL || strlen(av[2]) != 1)
 	{
 		printf("Error\n");
 		exit(99);
