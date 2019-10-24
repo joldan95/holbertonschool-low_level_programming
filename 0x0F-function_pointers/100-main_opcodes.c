@@ -22,7 +22,7 @@ int main(int ac, char **av)
 	if (atoi(av[1]) < 0)
 	{
 		puts("Error");
-		exit(1);
+		exit(2);
 	}
 
 	p = (char *)main;
@@ -32,5 +32,5 @@ int main(int ac, char **av)
 		printf((i == size - 1 ? "\n" : " "));
 	}
 
-	return 0;
+	return (0);
 }
