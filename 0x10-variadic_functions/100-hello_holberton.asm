@@ -4,7 +4,7 @@ main:
 	mov rax,4
 	mov rbx,1
 	mov rcx,msg
-	mov rdx,msglen
+	mov rdx,17
 	int 0x80
 
 	mov rax,1
@@ -12,4 +12,3 @@ main:
 
 	section .data
 msg:	db 'Hello, Holberton', 0xa
-msglen:	equ $-msg
