@@ -1,3 +1,5 @@
+#include <string.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -10,6 +12,7 @@
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new_element;
+	int i = 0;
 
 	if (str == NULL)
 		return (*head);
@@ -25,7 +28,9 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	new_element->len = strlen(str);
+	while (*(str + i) != '\0')
+		i++;
+	new_element->len = i;
 	new_element->next = *head;
 	*head = new_element;
 
