@@ -30,10 +30,3 @@ File (function) | Use
 4-free_list.c | Frees a list_t list
 100-first.c | Prints `You're beat! and yet, you must allow,\nI bore my house upon my back!\n` before the `main` function is executed
 101-hello_holberton.asn | 64-bit assembly program that prints `Hello, Holberton` followed by a new line. It should be compiling as `nasm -f elf64 101-hello_holberton.asm && gcc 101-hello_holberton.o -o hello`
-
-## Flowchart
-
-```mermaid
-graph LR
-	  [A] --> ((C))
-```
