@@ -10,7 +10,7 @@ listint_t *rev_recursion(listint_t **head, listint_t *prev);
  */
 listint_t *reverse_listint(listint_t **head)
 {
-	if(head == NULL)
+	if (head == NULL)
 		return (NULL);
 	else
 		return (rev_recursion(head, NULL));
