@@ -3,7 +3,7 @@
 
 /**
  * free_listint_safe - Frees a listint_t list
- * @head: Head of the list
+ * @h: Head of the list
  *
  * Description: Frees a listint_t list. It can frees lists with a loop
  * If the function fails, exit the program with status 98
