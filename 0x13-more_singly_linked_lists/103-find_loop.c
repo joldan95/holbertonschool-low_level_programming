@@ -26,8 +26,8 @@ listint_t *find_listint_loop(listint_t *head)
 			return (NULL);
 		else if ((add_b->next)->next == NULL)
 			return (NULL);
-		else
-			add_b = (add_b->next)->next;
+
+		add_b = (add_b->next)->next;
 
 		if (add_a == add_b)
 			break;
