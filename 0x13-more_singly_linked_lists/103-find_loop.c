@@ -11,18 +11,32 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	long int add_a, add_b;
+	listint_t *add_a, *add_b;
 
 	if (head == NULL)
 		return (NULL);
 
-	while (head != NULL)
+	add_a = head;
+	add_b = head;
+
+	while (1)
 	{
-		add_a = (long int)head;
-		add_b = (long int)head->next;
-		if (add_a - add_b <= 0)
-			return (head->next);
-		head = head->next;
+		add_a = add_a->next;
+		if (add_b->next == NULL)
+			return (NULL);
+		else if ((add_b->next)->next == NULL)
+			return (NULL);
+		else
+			add_b = (add_b->next)->next;
+
+		if (add_a == add_b)
+			break;
 	}
-	return (NULL);
+	add_a = head;
+	while (add_a != add_b)
+	{
+		add_a = add_a->next;
+		add_b = add_b->next;
+	}
+	return (add_a);
 }
