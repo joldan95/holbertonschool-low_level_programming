@@ -12,9 +12,10 @@ unsigned int _pow2(unsigned int n);
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int len = _strlen(b) - 1, i = 0, r = 0;
+	unsigned int len = _strlen(b) - 1, i = 0;
+	unsigned long int r = 0;
 
-	while (b[i])
+	while (b && b[i])
 	{
 		switch (b[i])
 		{
