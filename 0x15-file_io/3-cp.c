@@ -80,7 +80,7 @@ void copy_textfile(char *file_from, char *file_to)
 	}
 	el1 = close(fstart), el2 = close(fend);
 	if (el1 == -1 || el2 == -1)
-		exit_program(100, (el1 == -1 ? file_from : file_to));
+		exit_program(100, (el1 == -1 ? (char *)&fstart : (char *)&fend));
 }
 
 /**
