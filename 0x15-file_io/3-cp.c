@@ -50,38 +50,38 @@ int main(int ac, char **av)
  */
 void copy_textfile(char *file_from, char *file_to)
 {
-	int fstart, fend, el1, el2, c = 1;
+	int fst, fe, el1, el2, c = 1;
 	char buffer[1024];
 
-	fstart = open(file_from, O_RDONLY);
-	if (fstart == -1)
+	fst = open(file_from, O_RDONLY);
+	if (fst == -1)
 		exit_program(98, file_from);
 
-	fend = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (fend == -1)
-		close(fstart), exit_program(99, file_to);
+	fe = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (fe == -1)
+		close(fst), exit_program(99, file_to);
 
 	while (c)
 	{
-		el1 = read(fstart, buffer, 1024);
+		el1 = read(fst, buffer, 1024);
 		if (el1 == -1)
 		{
-			close(fstart), close(fend);
+			close(fst), close(fe);
 			exit_program(98, file_from);
 		}
-		el2 = write(fend, buffer, el1);
+		el2 = write(fe, buffer, el1);
 		if (el2 == -1)
 		{
-			close(fstart), close(fend);
+			close(fst), close(fe);
 			exit_program(99, file_to);
 		}
 		if (el2 < 1024)
 			c = 0;
 	}
-	el1 = close(fstart), el2 = close(fend);
+	el1 = close(fst), el2 = close(fe);
 	if (el1 == -1 || el2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (el1 == -1 ? fstart : fend));
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (el1 == -1 ? fst : fe));
 		exit(100);
 	}
 }
