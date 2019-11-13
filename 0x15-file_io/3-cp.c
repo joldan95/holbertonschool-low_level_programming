@@ -25,7 +25,7 @@ int main(int ac, char **av)
 {
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
@@ -81,8 +81,8 @@ void copy_textfile(char *file_from, char *file_to)
 	el1 = close(fstart), el2 = close(fend);
 	if (el1 == -1 || el2 == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", (el1 == -1 ? fstart : fend));
-		exit (100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (el1 == -1 ? fstart : fend));
+		exit(100);
 	}
 }
 
@@ -98,13 +98,13 @@ void exit_program(int number, char *workfile)
 	switch (number)
 	{
 	case 98:
-		dprintf(2, "Error: Can't read from file %s\n", workfile);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", workfile);
 		break;
 	case 99:
-		dprintf(2, "Error: Can't write to %s\n", workfile);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", workfile);
 		break;
 	case 100:
-		dprintf(2, "Error: Can't close fd %s\n", workfile);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", workfile);
 		break;
 	}
 	exit(number);
