@@ -36,7 +36,7 @@ int interpolation_search(int *array, size_t size, int value)
 			high = pos - 1;
 		else
 			low = pos + 1;
-		size_sa = low - high;
+		size_sa = high - low;
 	}
 
 	return (-1);
