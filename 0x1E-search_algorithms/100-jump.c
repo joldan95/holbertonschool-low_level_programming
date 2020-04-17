@@ -13,7 +13,6 @@
 int jump_search(int *array, size_t size, int value)
 {
 	unsigned int block, i;
-	int res;
 
 	if (!array)
 		return (-1);
@@ -27,29 +26,11 @@ int jump_search(int *array, size_t size, int value)
 		printf("Value checked array[%d] = [%d]\n", i, array[i]);
 	}
 
-	i -= block;
+	i -= i == 0 ? 0 : block;
 	printf("Value found between indexes [%d] and [%d]\n", i, i + block);
-	res = linear_search(array + i, i + block > size ? size - i : block + 1, value);
-	return (res + (res == -1 ? 0 : i));
-}
 
-/**
- * linear_search - Searches for a value in an array of ints using linear search
- * @array: Array of ints
- * @size: Size of array
- * @value: value to search
- *
- * Return: index where value is located
- * -1 if number was not found or array == NULL
- */
-int linear_search(int *array, size_t size, int value)
-{
-	unsigned int i;
-
-	if (!array)
-		return (-1);
-
-	for (i = 0; i < size; i++)
+	block = i + block + 1;
+	for (; i < size && i < block ; i++)
 	{
 		printf("Value checked array[%d] = [%d]\n", i, array[i]);
 		if (array[i] == value)
